@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./page.module.css";
-import blogPosts from "@/data";
+import blogPosts from "@/data/blogPosts";
 
 interface PageProps {
   params: Promise<{
@@ -26,7 +26,6 @@ export default async function BlogPost({ params }: PageProps) {
         width={800}
         height={400}
         className={styles.postImage}
-        style={{ width: '100%', height: '400px', objectFit: 'cover', borderRadius: '10px', marginBottom: '20px' }}
       />
       <h1 className={styles.title}>{post.title}</h1>
       <p className={styles.meta}>By {post.author} on {post.date}</p>

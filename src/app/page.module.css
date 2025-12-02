@@ -1,70 +1,71 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: var(--spacing-lg);
+  font-family: var(--font-sans);
+  background: var(--gradient-primary);
   min-height: 100vh;
-  color: #333;
+  color: var(--color-text-primary);
 }
 
 .header {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: var(--spacing-2xl);
 }
 
 .title {
   font-size: 3rem;
   font-weight: 700;
-  color: #fff;
-  margin-bottom: 10px;
+  color: var(--foreground);
+  margin-bottom: var(--spacing-md);
   text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 .searchContainer {
   display: flex;
   justify-content: center;
-  margin-bottom: 30px;
+  margin-bottom: var(--spacing-xl);
 }
 
 .searchInput {
   width: 100%;
   max-width: 500px;
-  padding: 15px 20px;
+  padding: var(--spacing-lg) var(--spacing-lg);
   font-size: 18px;
   border: none;
-  border-radius: 50px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
   outline: none;
   transition: all 0.3s ease;
 }
 
 .searchInput:focus {
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  box-shadow: var(--shadow-md);
   transform: translateY(-2px);
 }
 
 .blogList {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 30px;
+  gap: var(--spacing-xl);
   list-style: none;
   padding: 0;
 }
 
 .blogItem {
   background: rgba(255, 255, 255, 0.95);
-  border-radius: 15px;
-  padding: 25px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  border-radius: var(--radius-lg);
+  padding: 0;
+  box-shadow: var(--shadow-lg);
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
 }
 
 .blogItem:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  box-shadow: var(--shadow-xl);
 }
 
 .blogLink {
@@ -73,30 +74,41 @@
   display: block;
 }
 
+.blogImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.blogContent {
+  padding: var(--spacing-lg);
+}
+
 .blogTitle {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #2c3e50;
-  margin-bottom: 10px;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-md);
   line-height: 1.3;
 }
 
 .blogMeta {
   font-size: 0.9rem;
-  color: #7f8c8d;
+  color: var(--color-text-secondary);
   margin: 0;
 }
 
 .noResults {
   text-align: center;
-  color: #fff;
+  color: var(--foreground);
   font-size: 1.2rem;
-  margin-top: 50px;
+  margin-top: var(--spacing-2xl);
 }
 
 @media (max-width: 768px) {
   .container {
-    padding: 15px;
+    padding: var(--spacing-lg);
   }
 
   .title {
@@ -105,10 +117,6 @@
 
   .blogList {
     grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .blogItem {
-    padding: 20px;
+    gap: var(--spacing-lg);
   }
 }

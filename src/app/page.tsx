@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import styles from "./page.module.css";
-import blogPosts from "@/data";
+import blogPosts from "@/data/blogPosts";
 
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -38,9 +38,8 @@ export default function Home() {
                 width={350}
                 height={200}
                 className={styles.blogImage}
-                style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '10px 10px 0 0' }}
               />
-              <div style={{ padding: '15px' }}>
+              <div className={styles.blogContent}>
                 <h2 className={styles.blogTitle}>{post.title}</h2>
                 <p className={styles.blogMeta}>{post.date} by {post.author}</p>
               </div>
@@ -49,7 +48,7 @@ export default function Home() {
         ))}
       </ul>
       {filteredPosts.length === 0 && searchTerm && (
-        <p className={styles.noResults}>No blogs found matching "{searchTerm}"</p>
+        <p className={styles.noResults}>No blogs found matching &ldquo;{searchTerm}&rdquo;</p>
       )}
     </div>
   );

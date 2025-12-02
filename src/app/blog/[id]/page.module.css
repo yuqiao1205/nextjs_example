@@ -1,43 +1,52 @@
 .container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 40px 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: var(--spacing-2xl) var(--spacing-lg);
+  font-family: var(--font-sans);
+  background: var(--gradient-accent);
   min-height: 100vh;
-  color: #333;
+  color: var(--color-text-primary);
+}
+
+.postImage {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-lg);
+  display: block;
 }
 
 .title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #2c3e50;
-  margin-bottom: 10px;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-md);
   line-height: 1.2;
 }
 
 .meta {
   font-size: 1rem;
-  color: #7f8c8d;
-  margin-bottom: 30px;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-xl);
   font-style: italic;
 }
 
 .content {
   font-size: 1.2rem;
   line-height: 1.8;
-  color: #34495e;
-  margin-bottom: 40px;
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-2xl);
   text-align: justify;
 }
 
 .backLink {
   display: inline-block;
-  padding: 12px 24px;
-  background: linear-gradient(45deg, #3498db, #2980b9);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background: linear-gradient(45deg, var(--color-secondary), var(--color-secondary-dark));
   color: white;
   text-decoration: none;
-  border-radius: 25px;
+  border-radius: var(--radius-xl);
   font-weight: 600;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
@@ -50,7 +59,11 @@
 
 @media (max-width: 768px) {
   .container {
-    padding: 20px 15px;
+    padding: var(--spacing-lg) var(--spacing-lg);
+  }
+
+  .postImage {
+    height: 250px;
   }
 
   .title {
